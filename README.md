@@ -2,7 +2,7 @@
 
 Este projeto é uma pequena aplicação mobile desenvolvida como parte da avaliação da disciplina de Programação para Dispositivos Móveis. O aplicativo é uma Pokedex funcional que permite aos usuários explorar os 151 Pokémon da primeira geração.
 
-O objetivo principal foi aplicar os conceitos fundamentais do desenvolvimento mobile com React Native, incluindo componentização, navegação entre telas, gerenciamento de estado, consumo de APIs externas e estilização.
+O objetivo principal foi aplicar os conceitos fundamentais do desenvolvimento mobile com React Native, incluindo componentização, navegação entre telas, gerenciamento de estado e estilização. Além disto foi implementado o uso da API RESTful PokeAPI para pegar informações dos pokemons, para este projeto foi restringido apenas aos 151 primeiros pokemons da 1° Geração
 
 ## Funcionalidades
 
@@ -59,12 +59,12 @@ Para executar este projeto localmente, siga os passos abaixo.
 
 1.  **Clone o repositório:**
     ```bash
-    git clone [https://github.com/SEU-USUARIO/SEU-REPOSITORIO.git](https://github.com/SEU-USUARIO/SEU-REPOSITORIO.git)
+    git clone https://github.com/JhonPaulMR/mini-dex
     ```
 
 2.  **Navegue até o diretório do projeto:**
     ```bash
-    cd nome-do-seu-projeto
+    cd mini-dex
     ```
 
 3.  **Instale todas as dependências:**
@@ -79,6 +79,10 @@ Para executar este projeto localmente, siga os passos abaixo.
 4.  **Inicie o servidor de desenvolvimento do Expo:**
     ```bash
     npx expo start
+    ```
+    *ou*
+    ```bash
+    yarn start
     ```
 
 5.  **Execute no seu dispositivo:**
