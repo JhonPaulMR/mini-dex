@@ -1,6 +1,6 @@
 # Mini Pokedex
 
-Este projeto é uma pequena aplicação mobile desenvolvida como parte da avaliação da disciplina de Programação para Dispositivos Móveis. O aplicativo é uma Pokedex funcional que permite aos usuários explorar os 151 Pokémon da primeira geração.
+O Projeto consiste em ser uma pokedex funcional, contendo informações de cada pokemon, como tiragem, descrição, status e uma pequena imagem do pokemon
 
 O objetivo principal foi aplicar os conceitos fundamentais do desenvolvimento mobile com React Native, incluindo componentização, navegação entre telas, gerenciamento de estado e estilização. Além disto foi implementado o uso da API RESTful PokeAPI para pegar informações dos pokemons, para este projeto foi restringido apenas aos 151 primeiros pokemons da 1° Geração
 
