@@ -34,16 +34,14 @@ O aplicativo conta com as seguintes funcionalidades:
 
 Abaixo estão as principais telas desenvolvidas para a aplicação.
 
-*__Nota: Para adicionar as imagens, tire prints do seu aplicativo em execução, suba os arquivos para o GitHub no seu repositório e substitua as URLs de placeholder abaixo. [Veja aqui como adicionar imagens ao Readme.md](https://docs.github.com/pt/repositories/working-with-files/managing-files/adding-a-file-to-a-repository).__*
-
 ### Tela Principal (Listagem e Busca)
-![Tela de Listagem](https://raw.githubusercontent.com/SEU-USUARIO/SEU-REPOSITORIO/main/screenshots/pokedex-list.png)
+![Tela de Listagem](<img width="373" height="832" alt="image" src="https://github.com/user-attachments/assets/583d3c22-cb0e-490b-a189-142b19cf5c77" />)
 
 ### Tela de Detalhes do Pokémon
-![Tela de Detalhes](https://raw.githubusercontent.com/SEU-USUARIO/SEU-REPOSITORIO/main/screenshots/pokemon-details.png)
+![Tela de Detalhes](<img width="376" height="832" alt="image" src="https://github.com/user-attachments/assets/bbcb012e-a339-4e4a-8a45-427a4976649d" />)
 
 ### Tela de Favoritos
-![Tela de Favoritos](https://raw.githubusercontent.com/SEU-USUARIO/SEU-REPOSITORIO/main/screenshots/favorites-list.png)
+![Tela de Favoritos](<img width="376" height="833" alt="image" src="https://github.com/user-attachments/assets/b9b8383c-f1a5-4afc-8f85-b54e635b3fd0" />)
 
 
 ## Como Executar o Projeto
