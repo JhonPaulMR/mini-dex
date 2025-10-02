@@ -1,4 +1,4 @@
-# Mini Pokedex | Avaliação de Dispositivos Móveis
+# Mini Pokedex
 
 Este projeto é uma pequena aplicação mobile desenvolvida como parte da avaliação da disciplina de Programação para Dispositivos Móveis. O aplicativo é uma Pokedex funcional que permite aos usuários explorar os 151 Pokémon da primeira geração.
 
@@ -35,13 +35,13 @@ O aplicativo conta com as seguintes funcionalidades:
 Abaixo estão as principais telas desenvolvidas para a aplicação.
 
 ### Tela Principal (Listagem e Busca)
-![Tela de Listagem](<img width="373" height="832" alt="image" src="https://github.com/user-attachments/assets/583d3c22-cb0e-490b-a189-142b19cf5c77" />)
+<img width="300" height="666" alt="image" src="https://github.com/user-attachments/assets/583d3c22-cb0e-490b-a189-142b19cf5c77" />
 
 ### Tela de Detalhes do Pokémon
-![Tela de Detalhes](<img width="376" height="832" alt="image" src="https://github.com/user-attachments/assets/bbcb012e-a339-4e4a-8a45-427a4976649d" />)
+<img width="300" height="666" alt="image" src="https://github.com/user-attachments/assets/bbcb012e-a339-4e4a-8a45-427a4976649d" />
 
 ### Tela de Favoritos
-![Tela de Favoritos](<img width="376" height="833" alt="image" src="https://github.com/user-attachments/assets/b9b8383c-f1a5-4afc-8f85-b54e635b3fd0" />)
+<img width="300" height="666" alt="image" src="https://github.com/user-attachments/assets/b9b8383c-f1a5-4afc-8f85-b54e635b3fd0" />
 
 
 ## Como Executar o Projeto
