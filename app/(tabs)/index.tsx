@@ -22,7 +22,7 @@ export default function PokedexScreen() {
     if (indicateLoading) setLoading(true);
     setError(null);
     try {
-      const data = await getPokemonList(151);
+      const data = await getPokemonList(1025);
       setPokemons(data);
     } catch (e: any) {
       console.error('Failed to fetch pokemons', e);
