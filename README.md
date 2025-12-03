@@ -106,7 +106,7 @@ Para executar este projeto localmente, siga os passos abaixo.
 
 1.  **Clone o repositório:**
     ```bash
-    git clone [https://github.com/SEU-USUARIO/SEU-REPOSITORIO.git](https://github.com/SEU-USUARIO/SEU-REPOSITORIO.git)
+    git clone https://github.com/JhonPaulMR/mini-dex
     ```
 
 2.  **Navegue até o diretório do projeto:**
@@ -258,5 +258,6 @@ mini-dex/
 ├── jest.config.js                # Configuração do Jest
 └── jest-setup.js                 # Mocks e configurações globais
 ```
+
 
 ---
