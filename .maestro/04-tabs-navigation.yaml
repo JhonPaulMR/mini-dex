@@ -1,38 +1,21 @@
-appId: host.exp.exponent
+appId: com.anonymous.minidex
 ---
-# Teste E2E 4: Navegação entre tabs (Pokedex e Favoritos)
+# Teste E2E 4: Navegação entre tabs
+
 - launchApp
-- waitForAnimationToEnd:
-    timeout: 10000
 
-# Verificar que estamos na tab Pokedex (primeira tab)
-- assertVisible: "Search Pokémon..."
+- extendedWaitUntil:
+    visible: ".*Bulbasaur.*"
+    timeout: 20000
 
-# Navegar para a tab de Favoritos
-- tapOn: 
-    text: "Favorites"
-    optional: true
+- tapOn: "Favorites"
 
-- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible: ".*favorite.*"
+    timeout: 3000
 
-# Verificar se estamos na tela de favoritos
-# Pode mostrar "no favorite Pokémon yet" ou uma lista
-- assertVisible: 
-    text: ".*favorite.*"
-    optional: true
+- tapOn: "Pokedex"
 
-# Voltar para a tab Pokedex
-- tapOn: 
-    text: "Pokedex"
-    optional: true
-
-- waitForAnimationToEnd
-
-# Verificar que voltamos para a Pokedex
-- assertVisible: "Search Pokémon..."
-
-# Testar pull to refresh (se disponível)
-- scroll:
-    direction: up
-    
-- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible: "Sort Options"
+    timeout: 3000

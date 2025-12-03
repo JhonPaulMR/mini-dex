@@ -1,43 +1,27 @@
-appId: host.exp.exponent
+appId: com.anonymous.minidex
 ---
-# Teste E2E 1: Verificar carregamento inicial e busca de Pokémon
-- launchApp
-- assertVisible: "Search Pokémon..."
-- assertVisible: "Sort Options"
+# Teste E2E 1: Busca de Pokémon
 
-# Aguardar carregamento da lista de Pokémon
-- waitForAnimationToEnd:
-    timeout: 10000
+- launchApp:
+    clearState: true
 
-# Verificar se alguns Pokémon aparecem na lista
-- assertVisible: 
-    text: ".*bulbasaur.*"
-    optional: true
+- extendedWaitUntil:
+    visible: ".*Bulbasaur.*"
+    timeout: 15000
 
-# Teste de busca - buscar por Pikachu
 - tapOn: "Search Pokémon..."
-- inputText: "pika"
-- waitForAnimationToEnd
-
-# Verificar que Pikachu aparece nos resultados
-- assertVisible: 
-    text: ".*pikachu.*"
-    optional: true
-
-# Limpar busca
-- tapOn: "Search Pokémon..."
-- eraseText
-
-# Testar busca que não retorna resultados
-- inputText: "xyzabc123"
-- waitForAnimationToEnd
-
-# Verificar mensagem de lista vazia
-- assertVisible: 
-    text: "No results."
-    optional: true
-
-# Limpar busca novamente
-- tapOn: "Search Pokémon..."
-- eraseText
+- inputText: "pikachu"
 - hideKeyboard
+
+- extendedWaitUntil:
+    visible: ".*Pikachu.*"
+    timeout: 3000
+
+- tapOn: "Search Pokémon"
+- eraseText: 10
+- inputText: "xyz123"
+- hideKeyboard
+
+- extendedWaitUntil:
+    visible: "No results."
+    timeout: 2000

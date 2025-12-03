@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useMemo, useCallback } from 'react';
-import { FlatList, StyleSheet, View, ActivityIndicator, Button, Text, RefreshControl } from 'react-native';
-import Colors from '../../constants/Colors';
+import { useActionSheet } from '@expo/react-native-action-sheet';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import { ActivityIndicator, Button, FlatList, RefreshControl, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { extractPokemonId, getPokemonList } from '../../api/pokemon';
 import PokemonCard from '../../components/PokemonCard';
 import SearchBar from '../../components/SearchBar';
+import Colors from '../../constants/Colors';
 import { Pokemon } from '../../types';
-import { useActionSheet } from '@expo/react-native-action-sheet';
-import { getPokemonList, extractPokemonId } from '../../api/pokemon';
 
 type SortOrder = 'id' | 'name';
 
@@ -95,7 +95,15 @@ export default function PokedexScreen() {
   return (
     <View style={styles.container}>
       <SearchBar value={searchQuery} onChangeText={setSearchQuery} />
-      <Button title="Sort Options" onPress={openSortOptions} color={Colors.dark.tint} />
+      <View style={{ paddingHorizontal: 16, marginBottom: 10 }}>
+        <TouchableOpacity
+          onPress={openSortOptions}
+          style={{ backgroundColor: Colors.dark.tint, padding: 10, borderRadius: 5, alignItems: 'center' }}
+          testID="sort-button"
+        >
+          <Text style={{ color: 'white', fontWeight: 'bold' }}>Sort Options</Text>
+        </TouchableOpacity>
+      </View>
       <FlatList
         data={filteredAndSortedPokemons}
         renderItem={({ item }) => <PokemonCard pokemon={item} />}
@@ -103,7 +111,8 @@ export default function PokedexScreen() {
         numColumns={2}
         refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} tintColor={Colors.dark.tint} />}
         contentContainerStyle={styles.list}
-        ListEmptyComponent={!loading ? <Text style={styles.emptyText}>No results.</Text> : null}
+        ListEmptyComponent={!loading ? <Text style={styles.emptyText} testID="empty-list-text">No results.</Text> : null}
+        testID="pokemon-list"
       />
     </View>
   );

@@ -11,7 +11,7 @@ type Props = {
 
 const SearchBar = ({ value, onChangeText, placeholder = 'Search Pokémon...' }: Props) => {
   return (
-    <View style={styles.container}>
+    <View style={styles.container} testID="search-bar-container">
       <Ionicons name="search" size={20} color="#888" style={styles.icon} />
       <TextInput
         style={styles.input}
@@ -19,6 +19,8 @@ const SearchBar = ({ value, onChangeText, placeholder = 'Search Pokémon...' }: 
         onChangeText={onChangeText}
         placeholder={placeholder}
         placeholderTextColor="#888"
+        testID="search-input"
+        accessibilityLabel="Search Pokémon"
       />
     </View>
   );

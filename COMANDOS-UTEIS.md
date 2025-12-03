@@ -1,10 +1,10 @@
-# ⚡ Comandos Úteis - Mini Pokedex
+# Comandos Úteis - Mini Pokedex
 
 Referência rápida de todos os comandos importantes.
 
 ---
 
-## 🧪 Testes Unitários
+## Testes Unitários
 
 ### Executar todos os testes
 ```bash
@@ -41,7 +41,7 @@ npm test -- --verbose
 
 ---
 
-## 🎭 Testes E2E (Maestro)
+## Testes E2E (Maestro)
 
 ### Instalar Maestro (primeira vez)
 ```bash
@@ -82,7 +82,7 @@ maestro test .maestro/ --debug-output
 
 ---
 
-## 📱 Aplicação
+## Aplicação
 
 ### Iniciar servidor Expo
 ```bash
@@ -103,7 +103,7 @@ npx expo start -c
 
 ---
 
-## 📦 Dependências
+## Dependências
 
 ### Instalar dependências
 ```bash
@@ -122,7 +122,7 @@ npm update
 
 ---
 
-## 📝 Documentação
+## Documentação
 
 ### Visualizar estrutura do projeto
 ```bash
@@ -141,7 +141,7 @@ npm test -- --listTests | wc -l
 
 ---
 
-## 🔍 Debug
+## Debug
 
 ### Ver hierarquia de elementos (Maestro)
 ```bash
@@ -161,7 +161,7 @@ npx tsc --noEmit
 
 ---
 
-## 🛠️ Utilitários
+## Utilitários
 
 ### Script auxiliar
 ```bash
@@ -182,7 +182,7 @@ cat *.md | wc -w
 
 ---
 
-## 📊 Estatísticas
+## Estatísticas
 
 ### Ver cobertura por arquivo
 ```bash
@@ -201,7 +201,7 @@ npm test -- --listTests
 
 ---
 
-## 🚀 CI/CD (Opcional)
+## CI/CD (Opcional)
 
 ### Executar como CI
 ```bash
@@ -216,7 +216,7 @@ open coverage/lcov-report/index.html
 
 ---
 
-## 🔧 Manutenção
+## Manutenção
 
 ### Remover node_modules e reinstalar
 ```bash
@@ -238,7 +238,7 @@ npm outdated
 
 ---
 
-## 📋 Checklist Rápido
+## Checklist Rápido
 
 Antes de apresentar:
 ```bash
@@ -257,7 +257,7 @@ maestro test .maestro/01-search-pokemon.yaml
 
 ---
 
-## 💡 Dicas
+## Dicas
 
 ### Executar testes mudos (sem output)
 ```bash
@@ -281,7 +281,7 @@ npm test -- --onlyChanged
 
 ---
 
-## 🆘 Emergência
+## Emergência
 
 Se tudo falhar:
 ```bash
@@ -300,7 +300,7 @@ npm test
 
 ---
 
-## 📱 Maestro no Dispositivo Real
+## Maestro no Dispositivo Real
 
 ### Android
 ```bash
@@ -322,7 +322,7 @@ maestro test .maestro/01-search-pokemon.yaml
 
 ---
 
-## 🎯 Comandos para Demonstração
+## Comandos para Demonstração
 
 Sequência recomendada para apresentação:
 

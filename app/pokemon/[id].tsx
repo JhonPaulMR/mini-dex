@@ -1,22 +1,22 @@
-import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, Image, ActivityIndicator, ScrollView, TouchableOpacity } from 'react-native';
-import { useLocalSearchParams, Stack } from 'expo-router';
-import { PokemonDetails } from '../../types';
 import { Ionicons } from '@expo/vector-icons';
-import Colors from '../../constants/Colors';
-import TypeBadge from '../../components/TypeBadge';
-import { getPokemonDetails, getPokemonSpecies } from '../../api/pokemon';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { Stack, useLocalSearchParams } from 'expo-router';
+import React, { useEffect, useState } from 'react';
+import { ActivityIndicator, Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { getPokemonDetails, getPokemonSpecies } from '../../api/pokemon';
+import TypeBadge from '../../components/TypeBadge';
+import Colors from '../../constants/Colors';
+import { PokemonDetails } from '../../types';
 
 const FAVORITES_KEY = '@poke_favorites';
- 
+
 
 export default function PokemonDetailScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const [details, setDetails] = useState<PokemonDetails | null>(null);
   const [isFavorite, setIsFavorite] = useState(false);
   const [favorites, setFavorites] = useState<number[]>([]);
-  
+
   const [description, setDescription] = useState<string>('Carregando descrição...');
   const [error, setError] = useState<string | null>(null);
 
@@ -53,23 +53,23 @@ export default function PokemonDetailScreen() {
     };
     loadFavorites();
   }, [details]);
-  
+
   const toggleFavorite = async () => {
     if (!details) return;
-    
+
     let newFavorites: number[];
     if (isFavorite) {
-        newFavorites = favorites.filter(favId => favId !== details.id);
+      newFavorites = favorites.filter(favId => favId !== details.id);
     } else {
-        newFavorites = [...favorites, details.id];
+      newFavorites = [...favorites, details.id];
     }
 
     try {
-        await AsyncStorage.setItem(FAVORITES_KEY, JSON.stringify(newFavorites));
-        setFavorites(newFavorites);
-        setIsFavorite(!isFavorite);
+      await AsyncStorage.setItem(FAVORITES_KEY, JSON.stringify(newFavorites));
+      setFavorites(newFavorites);
+      setIsFavorite(!isFavorite);
     } catch (e) {
-        console.error('Failed to save favorites', e);
+      console.error('Failed to save favorites', e);
     }
   };
 
@@ -117,7 +117,7 @@ export default function PokemonDetailScreen() {
               source={{ uri: details.sprites.other['official-artwork'].front_default }}
               style={styles.image}
             />
-            <Text style={styles.name}>#{String(details.id).padStart(3, '0')} - {details.name}</Text>
+            <Text style={styles.name} testID="pokemon-header-name">#{String(details.id).padStart(3, '0')} - {details.name}</Text>
           </>
         )}
         <View style={styles.typesContainer}>
@@ -130,20 +130,6 @@ export default function PokemonDetailScreen() {
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>Pokédex Entry</Text>
         <Text style={styles.descriptionText}>{description}</Text>
-      </View>
-
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Physical Attributes</Text>
-        {details && (
-          <>
-            <Text style={styles.statText}>Height: {details.height / 10} m</Text>
-            <Text style={styles.statText}>Weight: {details.weight / 10} kg</Text>
-          </>
-        )}
-      </View>
-
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Base Stats</Text>
         {details?.stats.map(({ stat, base_stat }) => (
           <View key={stat.name} style={styles.statRow}>
             <Text style={styles.statName}>{stat.name.replace('-', ' ')}</Text>

@@ -37,12 +37,17 @@ const PokemonCard = ({ pokemon }: Props) => {
   };
 
   return (
-    <TouchableOpacity style={styles.card} onPress={handlePress}>
+    <TouchableOpacity 
+      style={styles.card} 
+      onPress={handlePress}
+      testID={`pokemon-card-${details.name}`}
+      accessibilityLabel={details.name}
+    >
       <Image
         source={{ uri: details.sprites.other['official-artwork'].front_default }}
         style={styles.image}
       />
-      <Text style={styles.name}>
+      <Text style={styles.name} testID={`pokemon-name-${details.name}`}>
         #{String(details.id).padStart(3, '0')} - {details.name}
       </Text>
     </TouchableOpacity>

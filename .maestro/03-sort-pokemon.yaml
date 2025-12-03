@@ -1,41 +1,26 @@
-appId: host.exp.exponent
+appId: com.anonymous.minidex
 ---
-# Teste E2E 3: Ordenação da lista de Pokémon
-- launchApp
-- waitForAnimationToEnd:
-    timeout: 10000
+# Teste E2E 3: Ordenação da lista
 
-# Abrir menu de ordenação
+- launchApp:
+    clearState: true
+
+- extendedWaitUntil:
+    visible: ".*Bulbasaur.*"
+    timeout: 25000
+
 - tapOn: "Sort Options"
-- waitForAnimationToEnd
 
-# Selecionar ordenação por nome
-- tapOn: 
-    text: "Sort by Name"
-    optional: true
+- extendedWaitUntil:
+    visible: "Sort by Name"
+    timeout: 2000
+- tapOn: "Sort by Name"
 
-- waitForAnimationToEnd
-
-# Verificar que a lista foi reordenada
-# O primeiro deve ser um Pokémon que começa com 'a' ou 'b'
-- assertVisible: 
-    text: ".*bulbasaur.*|.*abra.*"
-    optional: true
-
-# Abrir menu de ordenação novamente
 - tapOn: "Sort Options"
-- waitForAnimationToEnd
 
-# Voltar para ordenação por número
-- tapOn: 
-    text: "Sort by Number"
-    optional: true
+- extendedWaitUntil:
+    visible: "Sort by Number"
+    timeout: 2000
+- tapOn: "Sort by Number"
 
-- waitForAnimationToEnd
-
-# Cancelar menu (teste do botão cancel)
-- tapOn: "Sort Options"
-- waitForAnimationToEnd
-- tapOn: 
-    text: "Cancel"
-    optional: true
+- assertVisible: "Sort Options"

@@ -1,36 +1,22 @@
-appId: host.exp.exponent
+appId: com.anonymous.minidex
 ---
-# Teste E2E 2: Navegação para detalhes de um Pokémon
-- launchApp
-- waitForAnimationToEnd:
-    timeout: 10000
+# Teste E2E 2: Navegação para detalhes
 
-# Buscar por um Pokémon específico
-- tapOn: "Search Pokémon..."
-- inputText: "charizard"
-- hideKeyboard
-- waitForAnimationToEnd
+- launchApp:
+    clearState: true
 
-# Tocar no card do Pokémon
-- tapOn: 
-    text: ".*charizard.*"
-    optional: true
+- extendedWaitUntil:
+    visible: ".*Bulbasaur.*"
+    timeout: 20000
 
-# Aguardar navegação para tela de detalhes
-- waitForAnimationToEnd:
-    timeout: 5000
+- tapOn: "bulbasaur"
 
-# Verificar se estamos na tela de detalhes
-- assertVisible: 
-    text: ".*Height.*"
-    optional: true
+- extendedWaitUntil:
+    visible: "Pokédex Entry"
+    timeout: 8000
 
-- assertVisible: 
-    text: ".*Weight.*"
-    optional: true
-
-# Voltar para a lista
 - back
 
-# Verificar que voltamos para a tela principal
-- assertVisible: "Search Pokémon..."
+- extendedWaitUntil:
+    visible: "Sort Options"
+    timeout: 3000

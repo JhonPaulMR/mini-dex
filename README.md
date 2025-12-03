@@ -188,7 +188,20 @@ Siga as instruções em: https://maestro.mobile.dev/getting-started/installing-m
 
    **Executar todos os testes:**
    ```bash
-   maestro test .maestro/
+     # 1. Navegar para o projeto
+     cd "/home/jhonpaul/Documentos/Codes/Dispositivos Móveis/mini-dex"
+
+     # 2. Iniciar o emulador Android (se não estiver rodando)
+     emulator -avd $(emulator -list-avds | head -1) &
+
+     # 3. Aguardar emulador ficar pronto
+     adb wait-for-device
+
+     # 4. Compilar e rodar o app
+     yarn android
+
+     # 5. Após o app abrir, rodar os testes do Maestro (em outro terminal)
+     maestro test .maestro
    ```
 
    **Executar um teste específico:**
